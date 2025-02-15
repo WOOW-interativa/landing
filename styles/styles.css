@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "ArialRound";
+  src: url("../fonts/Arial\ Rounded\ Bold.ttf");
+}
+
+@font-face {
+  font-family: "Orb";
+  src: url("../fonts/Orbitron-VariableFont_wght.ttf");
+}
+
+:root {
+  --rotate-speed: 8s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: white;
+  color: black;
+}
+
+main {
+  position: absolute;
+  /* left: 35vw; */
+  top: 10%;
+  /* width: 30vw; */
+}
+
+h1, .slogan {
+  font-family: "Orb";
+  text-align: center;
+  width: 100vw;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  position: relative;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.rect-x,
+.rect-y {
+  width: 200px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: center;
+  background-color: transparent;
+  border: 6px solid black;
+  border-radius: 15px;
+  opacity: .5;
+}
+
+.rect-x {
+  animation: rotateX var(--rotate-speed) linear infinite;
+  /* background-color: rgba(0, 255, 255, .5); */
+}
+
+.rect-y {
+  animation: rotateY var(--rotate-speed) linear infinite;
+  /* background-color: rgba(128, 0, 128, 0.5); */
+}
+
+.woow {
+  font-family: "ArialRound";
+  position: absolute;
+  font-size: 3em;
+  /* color: #2c3e50; */
+  font-weight: bold;
+  z-index: 1;
+  transform: translateY(-7%);
+  background-color: transparent;
+}
+
+.woow span {
+  display: inline-block;
+}
+
+.woow .infinity:before {
+  content: '\221E';
+  font-size: 2.1em;
+  vertical-align: sub;
+}
+
+@keyframes rotateX {
+  0% {
+    transform: translateY(-50%) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-50%) rotateX(180deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotateX(0deg);
+  }
+}
+
+@keyframes rotateY {
+  0% {
+    transform: translateY(-50%) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateY(-50%) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotateY(0deg);
+  }
+}
+
+.qrcode, .slogan {
+  margin-top: 5%;
+  text-align: center;
+  
+}
+
+.qrcode img {
+  height: 30vh;
+  border-radius: 10%;
+}
+
+.slogan {
+  font-size: 1.5vw;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  html,
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .rect-x,
+  .rect-y {
+    border-color: white;
+  }
+}
+
+.isolation {
+  all: initial; /* Reseta tudo para o padrão do navegador */
+  display: block; /* Garantir o tipo de exibição desejado */
+  position: relative; /* Se necessário */
+}
