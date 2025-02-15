@@ -129,6 +129,7 @@ h1, .slogan {
 .qrcode img {
   height: 30vh;
   border-radius: 10%;
+  cursor: pointer;
 }
 
 .slogan {
